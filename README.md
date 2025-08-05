@@ -19,19 +19,22 @@ Averages and error bars are calculated using bin averaging, as follows:
 The averages and error bars are calculated using bin averaging as follows:
 
 **Average:**
-$$
+
+```math
 \langle \mathcal{O} \rangle = \frac{1}{n_{\text{bins}}}\sum_{i=1}^{n_{\text{bins}}}\bar{\mathcal{O}}_i
-$$
+```
 
 **Error bar:**
-$$
+
+```math
 \mathrm{err}_\mathcal{O} = \frac{1}{\sqrt{n_{\text{bins}}}} \sqrt{ \frac{1}{n_{\text{bins}}-1} \sum_{i=1}^{n_{\text{bins}}} \left( \bar{\mathcal{O}}_i - \langle \mathcal{O} \rangle \right)^2 }
-$$
+```
 
 where
-$$
+
+```math
 \bar{\mathcal{O}}_i = \frac{1}{n_{\text{points per bin}}} \sum_{j=1}^{n_{\text{points per bin}}} \mathcal{O}_j
-$$
+```
 
 ## Usage
 
