@@ -38,14 +38,22 @@ where
 
 ## Usage
 
-Current implementation is in Jupyter Notebooks. Enter your parameters at the top and SmoQy_Saver will look through your listed output directory for SmoQyDQMC folders.
+Current implementation is in Jupyter Notebooks. Enter your parameters at the top and SmoQy_Saver will look through your listed output directory for SmoQyDQMC folders. It will then output a .CSV file to your current working directory containing all observables and relevant information.
+
+Note that it expects a folder named as follows: `hubbard_{lattice}_U{U:.2f}_mu{mu:.2f}_L{L}_b{beta:.2f}-{sID}`
+
+### Flags
+
+If setting `LessIO = True`, then it will assume all .CSV files are in the root of the data folder (for use with [SmoQyDQMC - LessIO](https://www.github.com/swestastic/SmoQyDQMC.jl). If `LessIO = False`, it will assume they follow standard SmoQyDQMC folder structure.
 
 ## Future Work
 
 - Use SQLite3 for condensing save data into a SQL database file.
 
-- Add more indexes for $U$, $\beta$, etc.
-
-- More measurement outputs
-
 - Move to a python script/package with commandline arguments
+
+- N_bonds and N_orbitals supported for more lattices
+
+- Dynamic model naming in folder lookup, currently hardcoded for Hubbard model.
+
+- Add support for `time_displaced`, `integrated`, and `spaces` flags.
